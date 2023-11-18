@@ -3,13 +3,13 @@ import SideBar from "./components/Sidebar/SideBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
-import Users from "./pages/Users";
-import Messages from "./pages/Messages";
-import FileManager from "./pages/FileManager";
-import Analytics from "./pages/Analytics";
-import Order from "./pages/Order";
-import Saved from "./pages/Saved";
+import Users from "./pages/UserProfile";
 import Setting from "./pages/Setting";
+import UserProfile from "./pages/UserProfile";
+import Help from "./pages/Help";
+import Workspace from "./pages/Workspace";
+import MyAccount from "./pages/MyAccount";
+
 function App() {
   return (
     <Router>
@@ -17,11 +17,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/file-manager" element={<FileManager />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/saved" element={<Saved />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/userprofile" element={<UserProfile />} />
+          <Route path="/workspace" element={<Workspace />} />
+          <Route path="/MyAccount" element={<MyAccount />} />
           <Route path="/settings" element={<Setting />} />
 
           <Route path="*" element={<> not found</>} />

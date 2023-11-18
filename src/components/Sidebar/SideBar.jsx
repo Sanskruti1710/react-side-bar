@@ -1,88 +1,54 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
+import { FaBars,  FaUser } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
+// import { BiSearch } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
 const routes = [
   {
-    path: "/",
-    name: "Dashboard",
-    icon: <FaHome />,
-  },
-  {
-    path: "/users",
-    name: "Users",
+    path: "/User Profile",
+    name: "User Profile",
     icon: <FaUser />,
-  },
-  {
-    path: "/messages",
-    name: "Messages",
-    icon: <MdMessage />,
-  },
-  {
-    path: "/analytics",
-    name: "Analytics",
-    icon: <BiAnalyse />,
-  },
-  {
-    path: "/file-manager",
-    name: "File Manager",
-    icon: <AiTwotoneFileExclamation />,
     subRoutes: [
       {
-        path: "/settings/profile",
+        path: "/UserProfile/profile",
         name: "Profile ",
-        icon: <FaUser />,
+  
       },
       {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
+        path: "/UserProfile/MyAccount",
+        name: "My Account",
       },
       {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
+        path: "/UserProfile/logout",
+        name: "Logout",
       },
     ],
   },
   {
-    path: "/order",
-    name: "Order",
-    icon: <BsCartCheck />,
+    path: "/Help",
+    name: "Help",
+    icon: <MdMessage />,
   },
   {
     path: "/settings",
     name: "Settings",
     icon: <BiCog />,
-    exact: true,
-    subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
-      {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
-      },
-    ],
+  
   },
   {
-    path: "/saved",
-    name: "Saved",
-    icon: <AiFillHeart />,
+    path: "/User Profile",
+    name: "Workspace",
+    icon: <FaUser />,
+    subRoutes: [
+      {
+        path: "/Workspace/Private",
+        name: "Private ",
+  
+      },
+    ],
   },
 ];
 
@@ -148,7 +114,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  DoSomeCoding
+                  username
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -157,7 +123,7 @@ const SideBar = ({ children }) => {
               <FaBars onClick={toggle} />
             </div>
           </div>
-          <div className="search">
+          {/* <div className="search">
             <div className="search_icon">
               <BiSearch />
             </div>
@@ -173,7 +139,7 @@ const SideBar = ({ children }) => {
                 />
               )}
             </AnimatePresence>
-          </div>
+          </div> */}
           <section className="routes">
             {routes.map((route, index) => {
               if (route.subRoutes) {
